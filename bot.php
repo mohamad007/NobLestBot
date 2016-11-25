@@ -1,6 +1,6 @@
 <?php
 
-define('API_KEY','298990906:AAHDhWdef0nLDWIbo7UFC4QDa5QPZPatji4');
+define('API_KEY','');
 //----######------
 function makereq($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -202,10 +202,10 @@ elseif($textmessage == 'سفارش ربات')
 elseif($textmessage == 'راهنما')
 if($chat_id == $admin){
 	{
-		Sendmessage($chat_id,"/ban[reply]
+		Sendmessage($chat_id,"/ban [reply]
 		مسدود کردن فرد
 
-		/unban[reply]
+		/unban [reply]
 		ازاد کردن فرد
 
     تنظیم متن اعضای تیم [text]
