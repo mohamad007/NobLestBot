@@ -202,10 +202,10 @@ elseif($textmessage == 'سفارش ربات')
 elseif($textmessage == 'راهنما')
 if($chat_id == $admin){
 	{
-		Sendmessage($chat_id,"بلاک[reply]
+		Sendmessage($chat_id,"/ban[reply]
 		مسدود کردن فرد
 
-		حذف بلاک[reply]
+		/unban[reply]
 		ازاد کردن فرد
 
     تنظیم متن اعضای تیم [text]
@@ -395,51 +395,51 @@ Sendmessage($chat_id,"شما بلاک شده اید لطفا پیام ندهید
     }
       }
             elseif($rpto != "" && $chat_id == $admin){
-    	if($textmessage != "بلاک" && $textmessage != "حذف بلاک")
-    	{
+      if($textmessage != "/ban" && $textmessage != "/unban")
+      {
 sendmessage($rpto,"$textmessage");
-sendmessage($chat_id,"پیغام شما ارسال شد با موفقیت ارسال شد" );
-    	}
-    	else
-    	{
-    		if($textmessage == "بلاک"){
-    	$txtt = file_get_contents('banlist.txt');
-		$banid= explode("\n",$txtt);
-	if (!in_array($rpto,$banid)) {
-		$addd = file_get_contents('banlist.txt');
-		$addd = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "", $addd);
-		$addd .= $rpto."
+sendmessage($chat_id,"پیغام شما ارسال شد");
+      }
+      else
+      {
+        if($textmessage == "/ban"){
+      $txtt = file_get_contents('banlist.txt');
+    $banid= explode("\n",$txtt);
+  if (!in_array($rpto,$banid)) {
+    $addd = file_get_contents('banlist.txt');
+    $addd = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "", $addd);
+    $addd .= $rpto."
 ";
 
-    	file_put_contents('banlist.txt',$addd);
-    	{
-sendmessage($rpto,"شما به لیست بلاک شده ها اضافه شده اید");
+      file_put_contents('banlist.txt',$addd);
+      {
+sendmessage($rpto,"شما به لیست بلاک شده ها اضافه شدید");
 sendmessage($chat_id,"به لیست بلاک شده ها افزوده شد");
         }
-    		}
+        }
 }
-    	if($textmessage == "حذف بلاک"){
-    	$txttt = file_get_contents('banlist.txt');
-		$banidd= explode("\n",$txttt);
-	if (in_array($rpto,$banidd)) {
-		$adddd = file_get_contents('banlist.txt');
-		$adddd = str_replace($rpto,"",$adddd);
-		$adddd = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "", $adddd);
+      if($textmessage == "/unban"){
+      $txttt = file_get_contents('banlist.txt');
+    $banidd= explode("\n",$txttt);
+  if (in_array($rpto,$banidd)) {
+    $adddd = file_get_contents('banlist.txt');
+    $adddd = str_replace($rpto,"",$adddd);
+    $adddd = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "", $adddd);
     $adddd .="
 ";
 
 
-		$banid= explode("\n",$adddd);
+    $banid= explode("\n",$adddd);
     if($banid[1]=="")
       $adddd = preg_replace("/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/", "", $adddd);
 
-    	file_put_contents('banlist.txt',$adddd);
+      file_put_contents('banlist.txt',$adddd);
 }
-sendmessage($rpto,"شما از لیست بلاک شده ها پاک شدید");
+sendmessage($rpto,"شما ازلیست بلاک شده ها حذف شدید");
 sendmessage($chat_id,"از لیست بلاک شده ها پاک شد");
-    		}
-    	}
-	}
+        }
+      }
+  }
 
 
         elseif ($textmessage =="ارسال پیام به همه"  && $chat_id == $admin | $booleans[0]=="false") {
