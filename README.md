@@ -10,7 +10,7 @@
 
 ***Instagram ID*** : [XDeveloperX](https://instagram.com/XDeveloperX)
 
-***channel :*** [TeleBlasterTeam](https://instagram.com/TeleBlasterTeam)
+***channel :*** [TeleBlasterTeam](https://telegram.me/TeleBlasterTeam)
 
 
 *Tnx To Abbas*
