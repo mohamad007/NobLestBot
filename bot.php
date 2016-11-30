@@ -196,7 +196,7 @@ elseif($textmessage == 'سفارش ربات')
   	Sendmessage($chat_id,"برای سفارش ربات باقیمت
     50000تومان
     به ایدی زیر مراجعه کنید
-    @NobLest");
+    @danial68987");
   }
 
 elseif($textmessage == 'راهنما')
