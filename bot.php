@@ -1,6 +1,6 @@
 <?php
 
-define('API_KEY','');
+define('API_KEY','287810584:AAGv9V-Gt_yIMSZ8ekyqAb48dOFHQKJZ0Qk');
 //----######------
 function makereq($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -63,7 +63,7 @@ $file = $update->message->document;
 $music = $update->message->audio;
 $voice = $update->message->voice;
 $forward = $update->message->forward_from;
-$admin = 266151360;
+$admin = 193930120;
 //-------
 function SendMessage($ChatId, $TextMsg)
 {
@@ -182,21 +182,28 @@ elseif($textmessage == 'درباره من')
 
 	elseif($textmessage == 'شماره من')
 {
-	$phone = '+';
-	$namea = 'دانیال';
+	$phone = '+989394456147';
+	$namea = 'Dev';
 makereq('sendContact',[
 	'chat_id'=>$chat_id,
 	'phone_number'=>$phone,
 	'first_name'=>$namea
 	]);
 }
-
-elseif($textmessage == 'سفارش ربات')
+ elseif(strpos($textmessage , 'تنظیم متن سفارش ربات')!== false && $chat_id == $admin)
   {
-  	Sendmessage($chat_id,"برای سفارش ربات باقیمت
-    50000تومان
-    به ایدی زیر مراجعه کنید
-    @danial68987");
+    $javab = str_replace('تنظیم متن سفارش ربات',"",$textmessage);
+    if ($javab != "")
+  {
+  save("membertxt.txt","$javab");
+  SendMessage($chat_id,"با موفقیت تغییریافت");
+  }
+  }
+
+  elseif($textmessage == 'سفارش ربات')
+  {
+  $sefaresh = file_get_contents("sefaresh.txt");
+  Sendmessage($chat_id," $sefaresh ");
   }
 
 elseif($textmessage == 'راهنما')
@@ -472,7 +479,7 @@ sendmessage($chat_id,"از لیست بلاک شده ها پاک شد");
  if($chat_id == $admin){
  {
  file_put_contents('banlist.txt',$chat_id);
- Sendmessage($chat_id,"test");
+ Sendmessage($chat_id,"لیست بلاک شده ها پاک شد");
  }
 }
 ?>
