@@ -1,6 +1,6 @@
 <?php
 
-define('API_KEY','287810584:AAGv9V-Gt_yIMSZ8ekyqAb48dOFHQKJZ0Qk');
+define('API_KEY','');
 //----######------
 function makereq($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -217,7 +217,10 @@ if($chat_id == $admin){
 
     تنظیم متن اعضای تیم [text]
     تنظیم کردن متن اعضای تیم
-
+    
+		تنظیم متن سفارش ربات[text]
+		تنظیم متن سفارش ربات
+		
 		تنظیم متن درباره من[text]
 		نتظیم پروفایل شما");
 	}
