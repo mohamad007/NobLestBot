@@ -195,7 +195,7 @@ makereq('sendContact',[
     $javab = str_replace('تنظیم متن سفارش ربات',"",$textmessage);
     if ($javab != "")
   {
-  save("membertxt.txt","$javab");
+  save("sefaresh.txt","$javab");
   SendMessage($chat_id,"با موفقیت تغییریافت");
   }
   }
