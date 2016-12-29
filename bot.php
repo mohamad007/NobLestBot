@@ -1,6 +1,6 @@
 <?php
 
-define('API_KEY','');
+define('API_KEY','281676046:AAFUOjL7G81jI4TqBuKt66YOUqoaVuudNpI');
 //----######------
 function makereq($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -63,7 +63,7 @@ $file = $update->message->document;
 $music = $update->message->audio;
 $voice = $update->message->voice;
 $forward = $update->message->forward_from;
-$admin = 193930120;
+$admin = 290955679;
 //-------
 function SendMessage($ChatId, $TextMsg)
 {
@@ -182,7 +182,7 @@ elseif($textmessage == 'درباره من')
 
 	elseif($textmessage == 'شماره من')
 {
-	$phone = '+989394456147';
+	$phone = '+989305546142';
 	$namea = 'Dev';
 makereq('sendContact',[
 	'chat_id'=>$chat_id,
